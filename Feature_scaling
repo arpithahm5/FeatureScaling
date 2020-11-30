@@ -1,0 +1,37 @@
+Feature Scaling:
+
+Dataset consists of features with values which has different units and magnitutes.
+
+Ex: 
+Height  Weight 
+ 148      52
+ 153      55
+
+Features:
+1. Height -->  unit -> cm
+               magnitude -> (148,153)
+            
+2. Weight -->  unit -> kg
+               magnitude -> (52,55)
+               
+Given a dataset and asked to calculate the BMI(Body Mass Index), provided height and weight of indeviduals as features. Units of height and weight are 'cm' and 'kg' and its values are considered to be magnitude. Both the features have values measured with different units which may result in huge difference in the magnitude, so it is important to perform feature scaling to bring the values under on scale.   
+
+There are two types of feature scaling:
+1. Normalization: it helps to scale down the features between 0 and 1.
+2. Standardization: it helps to scale down the features based on standard normal distribution where mean is 0 and SD is 1.
+
+Algorithms which requires feature scaling:
+
+1. Linear regression:
+As we want to perform gradient descent to find global minima in linear regression to minimize the loss function, if scale the features, values of the features comes closer to the global minima(values which are 148,153 are brought between 0 and 1), and it will be easy to reach global minima in shorter time.
+
+2. Unsupervised algorithm(k means) and supervised algorithm(KNN):
+As these algorithms used Euclidean distance, it is convinient if the values are not far distanced from each other.
+
+3. Deep learning techniques(CNN, RNN, ANN):
+As gradient descent comes into picture while using Deep learning techniques, it is important to perform Scaling for features. 
+
+
+Where not to use feature scaling:
+Dision tree, Random forest, Xgboost, boosting and bagging. As these techniques yeild results irrespective of units and magnitude of values, it is not necessary to perform feature scaling. 
+
